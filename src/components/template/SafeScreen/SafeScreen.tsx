@@ -3,17 +3,21 @@ import type { PropsWithChildren } from 'react';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 import { useTheme } from '@/theme';
+import LinearGradient from 'react-native-linear-gradient';
 
 function SafeScreen({ children }: PropsWithChildren) {
   const { layout, variant, navigationTheme } = useTheme();
+  const colorLinear = ['#F37261', '#142131', '#000113', '#842CF2'];
   const insets = useSafeAreaInsets();
 
   return (
-    <View
+    <LinearGradient
+      colors={colorLinear}
+      useAngle
+      angle={-225}
       style={[
         layout.flex_1,
         {
-          backgroundColor: navigationTheme.colors.background,
           // Paddings to handle safe area
           paddingTop: insets.top,
           paddingBottom: insets.bottom,
@@ -26,8 +30,9 @@ function SafeScreen({ children }: PropsWithChildren) {
         barStyle={variant === 'dark' ? 'light-content' : 'dark-content'}
         backgroundColor={navigationTheme.colors.background}
       />
+
       {children}
-    </View>
+    </LinearGradient>
   );
 }
 

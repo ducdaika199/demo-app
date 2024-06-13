@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 import { CommonActions } from '@react-navigation/native';
 
 import { useTheme } from '@/theme';
-import { Brand } from '@/components/molecules';
+// import { Brand } from '@/components/molecules';
 import { SafeScreen } from '@/components/template';
 
 import type { RootScreenProps } from '@/types/navigation';
@@ -26,7 +26,7 @@ function Startup({ navigation }: RootScreenProps<'Startup'>) {
       navigation.dispatch(
         CommonActions.reset({
           index: 0,
-          routes: [{ name: 'Example' }],
+          routes: [{ name: 'Profile' }],
         })
       );
     }
@@ -42,7 +42,7 @@ function Startup({ navigation }: RootScreenProps<'Startup'>) {
           layout.justifyCenter,
         ]}
       >
-        <Brand />
+        {/* <Brand /> */}
         {isFetching && (
           <ActivityIndicator size="large" style={[gutters.marginVertical_24]} />
         )}
