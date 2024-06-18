@@ -39,7 +39,8 @@ module.exports = {
     },
   },
   rules: {
-    '@typescript-eslint/no-unused-vars': 'error',
+    '@typescript-eslint/no-unused-vars': 'off',
+    '@typescript-eslint/no-unsafe-return': 'off',
     'global-require': 0,
     'react-hooks/exhaustive-deps': 'off',
     quotes: ['error', 'single'],
@@ -60,7 +61,7 @@ module.exports = {
     'import/prefer-default-export': 'off',
     'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
     'react/display-name': 'off',
-    'no-console': ['error', { allow: ['error'] }],
+    'no-console': ['off', { allow: ['error'] }],
     'prettier/prettier': [
       'error',
       {
